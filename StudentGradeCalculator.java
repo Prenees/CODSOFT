@@ -7,7 +7,7 @@ class StudentGradeCalculator
         System.out.println("---Student Grade Calculator----");
         System.out.println("Enter how many subject");
         int numofsub=scn.nextInt();
-        
+
         // Stored marks
         int[] marks=new int[numofsub];
         int total=0;
@@ -26,11 +26,14 @@ class StudentGradeCalculator
             marks[i]=mark;
             total=total+mark;
         }
+        calculate(total,numofsub);
+    }
+    public static void calculate(int total,int numofsub)
+    {
         // Calculate average
         double avg=total/numofsub;
-
-        // Grade Display
         char grade;
+        // Grade Display
         if(avg>=90)
         {
             grade='A';
@@ -57,5 +60,15 @@ class StudentGradeCalculator
         System.out.println("Total marks ="+total);
         System.out.println("Average  ="+avg);
         System.out.println("Grade  ="+grade);
+
+        if(grade=='F')
+        {
+            System.out.println("Fail");
+        }
+        else
+        {
+            System.out.println("Pass");
+        }
     }
+       
 }
